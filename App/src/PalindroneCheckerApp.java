@@ -9,14 +9,16 @@ public class PalindroneCheckerApp {
         displayWelcomeMessage();
 
         // Hardcoded string
-        String testString = "madam";
+        String original = "racecar";
 
-        // Check palindrome
-        boolean isPalindrome = checkPalindrome(testString);
+        // Reverse the string using a loop
+        String reversed = reverseString(original);
 
-        // Display result
-        System.out.println("Testing String: " + testString);
-        if (isPalindrome) {
+        // Compare original and reversed
+        System.out.println("Original String : " + original);
+        System.out.println("Reversed String : " + reversed);
+
+        if (original.equals(reversed)) {
             System.out.println("Result: It is a palindrome.");
         } else {
             System.out.println("Result: It is NOT a palindrome.");
@@ -32,13 +34,14 @@ public class PalindroneCheckerApp {
         System.out.println("===================================");
     }
 
-    private static boolean checkPalindrome(String input) {
+    // Method to reverse string using loop
+    private static String reverseString(String input) {
         String reversed = "";
 
         for (int i = input.length() - 1; i >= 0; i--) {
-            reversed += input.charAt(i);
+            reversed = reversed + input.charAt(i);
         }
 
-        return input.equals(reversed);
+        return reversed;
     }
 }
